@@ -1,6 +1,6 @@
-# 🏦 Bank Customer Churn Analysis
+# Bank Customer Churn Analysis
 
-## 📌 Project Overview
+##  Project Overview
 This end-to-end data analysis project explores customer churn behavior 
 at a bank using a dataset of 10,000 customers across France, Germany, 
 and Spain. The goal is to identify key factors driving customer churn 
@@ -8,12 +8,12 @@ and present actionable insights through an interactive Tableau dashboard.
 
 ---
 
-## 🔗 Live Dashboard
-👉 [View on Tableau Public]https://public.tableau.com/shared/YW4QG7NK7?:display_count=n&:origin=viz_share_link
+##  Live Dashboard
+[View on Tableau Public]https://public.tableau.com/shared/YW4QG7NK7?:display_count=n&:origin=viz_share_link
 
 ---
 
-## 📂 Dataset
+##  Dataset
 - **Source:** Kaggle — Bank Customer Churn Prediction
 - **Rows:** 10,000 customers
 - **Columns:** 14 features
@@ -36,14 +36,14 @@ and present actionable insights through an interactive Tableau dashboard.
 
 ---
 
-## 🛠️ Tools Used
+##  Tools Used
 - **DB Browser for SQLite** — Data cleaning & EDA
 - **Tableau Public** — Dashboard & visualization
 - **GitHub** — Version control & portfolio
 
 ---
 
-## 🧹 Data Cleaning (SQL)
+##  Data Cleaning (SQL)
 
 ### 1. Row Count Validation
 ```sql
@@ -80,33 +80,33 @@ SELECT
   MIN(Balance), MAX(Balance),
   MIN(Tenure), MAX(Tenure)
 FROM Churn_Modelling;
--- CreditScore: 350–850 ✅
--- Age: 18–92 ✅
--- Balance: 0–250,898 ✅
--- Tenure: 0–10 ✅
+-- CreditScore: 350–850 
+-- Age: 18–92 
+-- Balance: 0–250,898 
+-- Tenure: 0–10 
 ```
 
 ### 5. Categorical Validation
 ```sql
 SELECT Geography, COUNT(*) FROM Churn_Modelling GROUP BY Geography;
--- France: 5014 | Germany: 2509 | Spain: 2477 ✅
+-- France: 5014 | Germany: 2509 | Spain: 2477 
 
 SELECT Gender, COUNT(*) FROM Churn_Modelling GROUP BY Gender;
--- Female: 4543 | Male: 5457 ✅
+-- Female: 4543 | Male: 5457
 ```
 
 ### Cleaning Summary
 | Check | Result |
 |-------|--------|
-| Total Rows | 10,000 ✅ |
-| Duplicates | 0 ✅ |
-| Null Values | 0 ✅ |
-| Invalid Ranges | None ✅ |
-| Category Errors | None ✅ |
+| Total Rows | 10,000  |
+| Duplicates | 0  |
+| Null Values | 0  |
+| Invalid Ranges | None  |
+| Category Errors | None  |
 
 ---
 
-## 🔍 Exploratory Data Analysis (SQL)
+##  Exploratory Data Analysis (SQL)
 
 ### Overall Churn Rate
 ```sql
@@ -131,7 +131,7 @@ GROUP BY Geography;
 | Geography | Total | Churned | Churn Rate |
 |-----------|-------|---------|------------|
 | France | 5,014 | 810 | 16.15% |
-| Germany | 2,509 | 814 | 32.44% 🚨 |
+| Germany | 2,509 | 814 | 32.44% |
 | Spain | 2,477 | 413 | 16.67% |
 
 ### Churn by Gender
@@ -144,7 +144,7 @@ GROUP BY Gender;
 ```
 | Gender | Total | Churned | Churn Rate |
 |--------|-------|---------|------------|
-| Female | 4,543 | 1,139 | 25.07% 🚨 |
+| Female | 4,543 | 1,139 | 25.07% |
 | Male | 5,457 | 898 | 16.46% |
 
 ### Churn by Age Group
@@ -166,7 +166,7 @@ GROUP BY Age_Group;
 |-----------|-------|---------|------------|
 | Under 30 | 1,641 | 124 | 7.56% |
 | 30-45 | 6,248 | 956 | 15.30% |
-| 46-60 | 1,647 | 842 | 51.12% 🚨 |
+| 46-60 | 1,647 | 842 | 51.12% |
 | Above 60 | 464 | 115 | 24.78% |
 
 ### Churn by Number of Products
@@ -180,9 +180,9 @@ GROUP BY NumOfProducts;
 | Products | Total | Churned | Churn Rate |
 |----------|-------|---------|------------|
 | 1 | 5,084 | 1,409 | 27.71% |
-| 2 | 4,590 | 348 | 7.58% ✅ |
-| 3 | 266 | 220 | 82.71% 🚨 |
-| 4 | 60 | 60 | 100.00% 🚨🚨 |
+| 2 | 4,590 | 348 | 7.58%  |
+| 3 | 266 | 220 | 82.71% |
+| 4 | 60 | 60 | 100.00% |
 
 ### Churned vs Retained — Avg Profile
 ```sql
@@ -200,7 +200,7 @@ GROUP BY Exited;
 
 ---
 
-## 💡 Key Business Insights
+## Key Business Insights
 
 1. **20.37% Overall Churn Rate** — 1 in 5 customers left the bank
 
@@ -218,18 +218,18 @@ GROUP BY Exited;
 
 ---
 
-## ✅ Recommendations
+##  Recommendations
 
-- 🎯 Launch targeted retention campaigns in **Germany**
-- 👩 Investigate and address **female customer** dissatisfaction
-- 👴 Create special loyalty programs for **46–60 age group**
-- 📦 Review and simplify **product bundling strategy**
-- 📲 Re-engage **inactive members** through personalized outreach
-- 💰 Prioritize retention of **high-balance customers**
+-  Launch targeted retention campaigns in **Germany**
+-  Investigate and address **female customer** dissatisfaction
+-  Create special loyalty programs for **46–60 age group**
+-  Review and simplify **product bundling strategy**
+- Re-engage **inactive members** through personalized outreach
+   Prioritize retention of **high-balance customers**
 
 ---
 
-## 📊 Dashboard Preview
+## Dashboard Preview
 ![Dashboard]<img width="1203" height="558" alt="BANK CHURN- 2" src="https://github.com/user-attachments/assets/7840d8e3-b929-46ac-b435-25c48bbcbe6a" />
 <img width="1200" height="551" alt="BANK CHURN-3" src="https://github.com/user-attachments/assets/1e4d9b24-9544-4cca-987f-0b8f37c7603e" />
 <img width="1204" height="536" alt="bank churn-main" src="https://github.com/user-attachments/assets/09210f18-6db1-473b-8144-20a3079754bd" />
